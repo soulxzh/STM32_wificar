@@ -57,25 +57,16 @@ int main(void)
 	MotorInit();
 	ServoInit();
   //USART3Conf(9600);
-	
-//while(1)
- //{
-	 //CarGo();
-	 //DBG("go");
- //}
+
 	UartBegin(115200,&USART3Conf,&PutChar);//每次设置完波特率后需要做一点延时
-	delay_ms(5000);
-	
- //设置WiFi波特率115200
- //while(SetBaud(115200) == 0);
- LED1_RESET;
- //WiFi初始化，连接指定的路由器和主机
- while(WifiInit(SSID,PSD,HOST_NAME,HOST_PORT) == 0);
- LED2_RESET;
+	delay_ms(500);
+	LED1_RESET;
+	//WiFi初始化，连接指定的路由器和主机
+	while(WifiInit(SSID,PSD,HOST_NAME,HOST_PORT) == 0);
+	LED2_RESET;
 
-
- while(1)
- {					
+	while(1)
+	{					
 		if(SerialAvailable() > 5)//接收到至少5个字符
 		{
 			int len;
@@ -95,26 +86,26 @@ int main(void)
 			} 
 		}
 		
-//	  if(tick_5ms >= 5)
-//		{
-//			tick_5ms = 0;
-//			tick_200ms++;
-//			if(tick_200ms >= 40)
-//			{
-//				tick_200ms = 0;
-//				tick_3s++;
-//				LEDToggle(LED1_PIN);
-//				if(tick_3s >= 15)//15*200=3000
-//				{
-//					tick_3s = 0;
-//					//定时检查连接是否正常，如果不正常,wifi复位重新连接
-//					if(getSystemStatus() != STATUS_GETLINK)
-//		      {
-//						DBG("TCP unlink");
-//						while(!WifiInit(SSID,PSD,HOST_NAME,HOST_PORT));
-//		      }	
-//				}
-//			}
+	  //if(tick_5ms >= 5)
+		//{
+		//	tick_5ms = 0;
+		//	tick_200ms++;
+		//	if(tick_200ms >= 40)
+		//	{
+		//		tick_200ms = 0;
+		//		tick_3s++;
+		//		LEDToggle(LED1_PIN);
+		//		if(tick_3s >= 15)//15*200=3000
+		//		{
+		//			tick_3s = 0;
+					//定时检查连接是否正常，如果不正常,wifi复位重新连接
+		//			if(getSystemStatus() != STATUS_GETLINK)
+		//      {
+		//				DBG("TCP unlink");
+		//				while(!WifiInit(SSID,PSD,HOST_NAME,HOST_PORT));
+		//      }	
+		//	
+		//    }
 		
 			//continue_time--;//200ms 无接收指令就停车
 			//if(continue_time == 0)
@@ -137,7 +128,7 @@ int main(void)
 				}
 				DBG("recv COMM");
 			}
-		}
+	}
 		
  }
 //}

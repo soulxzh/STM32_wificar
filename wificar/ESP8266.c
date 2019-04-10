@@ -189,7 +189,7 @@ int restart(void)
             delay_ms(100);
         //}
     }
-		else DBG("restart false");
+		else DBG("restart error");
     return 0;
 }
 
