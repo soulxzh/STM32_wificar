@@ -1,8 +1,7 @@
 # STM32_wificar
 A smart car using ceramic substrates, STM32F103ZET6 board and ESP8266 WiFi module
 
-Hardware
-------------------
+## Hardware
 * STM32F103ZET6 board
 * L293DD
 * 78M05
@@ -10,8 +9,7 @@ Hardware
 * ESP8266(E103-W01/E103-W01-IPX)
 * DC motors
 
-Requirements
-__________________
+## Requirements
 **Building**
 * MDK Version 4+
 
