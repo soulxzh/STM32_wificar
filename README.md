@@ -1,8 +1,8 @@
 # STM32_wificar
-A smart car using ceramic substrates, STM32F103ZET6 board and ESP8266 WiFi module
+A smart car using ceramic substrates, MINISTM32V2 board and ESP8266 WiFi module
 
 ## Hardware
-* STM32F103ZET6 board
+* MINISTM32V2 board(STM32F103ZET6)
 * L293DD
 * 78M05
 * 78M12
