@@ -53,13 +53,13 @@ int main(void)
 	GPIOCLKInit();
 	UserLEDInit();
 	LCD1602Init();
-	TIM3_PWM_Init(899,0);
+	TIM3_PWM_Init(900,0);
 	MotorInit();
 	ServoInit();
   //USART3Conf(9600);
 
 	UartBegin(115200,&USART3Conf,&PutChar);//每次设置完波特率后需要做一点延时
-	delay_ms(500);
+	delay_ms(10000);
 	LED1_RESET;
 	//WiFi初始化，连接指定的路由器和主机
 	while(WifiInit(SSID,PSD,HOST_NAME,HOST_PORT) == 0);

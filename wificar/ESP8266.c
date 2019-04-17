@@ -185,7 +185,7 @@ int restart(void)
                 delay_ms(1500); /* Waiting for stable */
                 return 1;
             }
-						
+						else DBG("restart error");
             delay_ms(100);
         //}
     }
