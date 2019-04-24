@@ -178,7 +178,7 @@ int restart(void)
 {
     unsigned long start;
     if (eATRST()) {
-        delay_ms(2000);
+        delay_ms(20000);
         //start = millis();
         //while (millis() - start < 3000) {
             if (eAT()) {

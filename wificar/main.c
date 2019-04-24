@@ -26,11 +26,11 @@ char ctrl_comm = COMM_STOP;//控制指令
 unsigned char continue_time=0;
 unsigned char wifi_rec_flag=0;//蓝牙控制标志位
 
-#define HOST_NAME   "192.168.1.106" //主机IP
+#define HOST_NAME   "192.168.43.174" //主机IP
 #define HOST_PORT   2400  //主机端口
 
-#define SSID "TP-LINK_83D4"  //路由器名
-#define PSD  "60604_25" //密码
+#define SSID "TADESHENGRI"  //路由器名
+#define PSD  "19260817" //密码
 
 #define RECVBUF_SIZE 16
 unsigned char buffer[RECVBUF_SIZE] = {0};
@@ -47,8 +47,11 @@ int main(void)
 	MotorInit();
 	ServoInit();
   //USART3Conf(9600);
+	DBG("Motor Complete");
 
 	UartBegin(115200,&USART3Conf,&PutChar);//每次设置完波特率后需要做一点延时
+	while(0 == SetBaud(115200));
+	DBG("Setbaud complete");
 	delay_ms(500);
 	LED1_RESET;
 	//WiFi初始化，连接指定的路由器和主机

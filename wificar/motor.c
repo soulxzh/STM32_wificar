@@ -13,9 +13,9 @@
 void CarGo()
 {
 	//GPIO_SetBits(GPIOA,GPIO_Pin_2);
-	TIM_SetCompare1(TIM3,100);
+	TIM_SetCompare1(TIM3,80);
 	//GPIO_ResetBits(GPIOA,GPIO_Pin_3);
-	TIM_SetCompare2(TIM3,100);
+	TIM_SetCompare2(TIM3,80);
 	RIO=1; //右轮前进
 	LIO=0; //左轮前进
 }
