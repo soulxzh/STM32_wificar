@@ -26,11 +26,11 @@ char ctrl_comm = COMM_STOP;//控制指令
 unsigned char continue_time=0;
 unsigned char wifi_rec_flag=0;//蓝牙控制标志位
 
-#define HOST_NAME   "192.168.43.174" //主机IP
+#define HOST_NAME   "192.168.43.73" //主机IP
 #define HOST_PORT   2400  //主机端口
 
-#define SSID "TADESHENGRI"  //路由器名
-#define PSD  "19260817" //密码
+#define SSID "AndroidAP_1623"  //路由器名
+#define PSD  "autochess" //密码
 
 #define RECVBUF_SIZE 16
 unsigned char buffer[RECVBUF_SIZE] = {0};
@@ -42,10 +42,10 @@ int main(void)
 	delay_init();
 	GPIOCLKInit();
 	UserLEDInit();
-	LCD1602Init();
-	TIM3_PWM_Init(900,0);
+	//LCD1602Init();
+	TIM3_PWM_Init(3599,0);//不分频。PWM频率=72000000/(3599+1)=20Khz
 	MotorInit();
-	ServoInit();
+	//ServoInit();
   //USART3Conf(9600);
 	DBG("Motor Complete");
 
