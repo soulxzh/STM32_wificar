@@ -23,14 +23,14 @@ void CarGo()
 void CarLeft()
 {
 	TIM_SetCompare1(TIM3,49);
-	TIM_SetCompare2(TIM3,899);
+	TIM_SetCompare2(TIM3,1799);
 	RIO=0;
 	LIO=0;
 }
 
 void CarRight()
 {
-	TIM_SetCompare1(TIM3,899);
+	TIM_SetCompare1(TIM3,1799);
 	TIM_SetCompare2(TIM3,49);
 	RIO=1;	
 	LIO=1;
