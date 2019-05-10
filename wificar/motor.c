@@ -33,7 +33,7 @@ void MotorInit()
 void CarGo()
 {
 	//GPIO_SetBits(GPIOA,GPIO_Pin_2);
-	TIM_SetCompare1(TIM3,49);
+	TIM_SetCompare1(TIM3,299);
 	//GPIO_ResetBits(GPIOA,GPIO_Pin_3);
 	TIM_SetCompare2(TIM3,49);
 	RIO=0; //ÓÒÂÖÇ°½ø
@@ -42,23 +42,23 @@ void CarGo()
 
 void CarLeft()
 {
-	TIM_SetCompare1(TIM3,49);
-	TIM_SetCompare2(TIM3,899);
+	TIM_SetCompare1(TIM3,299);
+	TIM_SetCompare2(TIM3,699);
 	RIO=0;
-	LIO=0;
+	LIO=1;
 }
 
 void CarRight()
 {
-	TIM_SetCompare1(TIM3,899);
-	TIM_SetCompare2(TIM3,49);
-	RIO=1;	
+	TIM_SetCompare1(TIM3,499);
+	TIM_SetCompare2(TIM3,299);
+	RIO=0;	
 	LIO=1;
 }
 
 void CarBack()
 {
-	TIM_SetCompare1(TIM3,49);
+	TIM_SetCompare1(TIM3,299);
   TIM_SetCompare2(TIM3,49);
 	RIO=1;
 	LIO=0;
